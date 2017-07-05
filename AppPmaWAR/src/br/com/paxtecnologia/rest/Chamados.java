@@ -102,59 +102,60 @@ public class Chamados {
 		return retorno;
 	}
 	
-	@GET
-	@Path("/basic_auth/chamados")
-	public RelatorioRetornoVO relatorioBasic(@QueryParam("data_inicial") String data_inicial,
-			@QueryParam("data_final") String data_final) {
-		RelatorioRetornoVO retorno = new RelatorioRetornoVO();
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		try {
-			Date dtIni = null;
-			Date dtFim = null;
-			if (data_inicial != null) {
-				try {
-					dtIni = sdf.parse(data_inicial);
-					retorno.setData_inicio(data_inicial);
-				} catch (ParseException e) {
-					retorno.setData_inicio("Data fora do formato yyyy-MM-dd");
-					throw new Exception("Data fora do formato yyyy-MM-dd");
-				}
-			} else {
-				data_inicial = sdf.format(new Date());
-				dtIni = sdf.parse(data_inicial);
-			}
-
-			if (data_final != null) {
-				try {
-					dtFim = sdf.parse(data_final);
-					retorno.setData_fim(data_final);
-				} catch (ParseException e) {
-					retorno.setData_fim("Data fora do formato yyyy-MM-dd");
-					throw new Exception("Data fora do formato yyyy-MM-dd");
-				}
-			} else {
-				data_final = sdf.format(new Date());
-				dtFim = sdf.parse(data_final);
-			}
-
-			// Se a data de inicio > data fim = {
-			// - data inicio = data fim - 1 mes;
-			// }
-
-			if (dtIni.compareTo(dtFim) >= 0) {
-				Calendar cal = Calendar.getInstance();
-				cal.setTime(dtFim);
-				cal.add(Calendar.MONTH, -1);
-				dtIni = cal.getTime();
-
-				data_inicial = sdf.format(dtIni);
-				retorno.setData_inicio(data_inicial);
-			}
-
-			retorno = processamento.iniciaProcessamento(data_inicial, data_final);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return retorno;
-	}
+	// Precisa implementar uma forma de requisitar o usuário e senha
+//	@GET
+//	@Path("/basic_auth/chamados")
+//	public RelatorioRetornoVO relatorioBasic(@QueryParam("data_inicial") String data_inicial,
+//			@QueryParam("data_final") String data_final) {
+//		RelatorioRetornoVO retorno = new RelatorioRetornoVO();
+//		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//		try {
+//			Date dtIni = null;
+//			Date dtFim = null;
+//			if (data_inicial != null) {
+//				try {
+//					dtIni = sdf.parse(data_inicial);
+//					retorno.setData_inicio(data_inicial);
+//				} catch (ParseException e) {
+//					retorno.setData_inicio("Data fora do formato yyyy-MM-dd");
+//					throw new Exception("Data fora do formato yyyy-MM-dd");
+//				}
+//			} else {
+//				data_inicial = sdf.format(new Date());
+//				dtIni = sdf.parse(data_inicial);
+//			}
+//
+//			if (data_final != null) {
+//				try {
+//					dtFim = sdf.parse(data_final);
+//					retorno.setData_fim(data_final);
+//				} catch (ParseException e) {
+//					retorno.setData_fim("Data fora do formato yyyy-MM-dd");
+//					throw new Exception("Data fora do formato yyyy-MM-dd");
+//				}
+//			} else {
+//				data_final = sdf.format(new Date());
+//				dtFim = sdf.parse(data_final);
+//			}
+//
+//			// Se a data de inicio > data fim = {
+//			// - data inicio = data fim - 1 mes;
+//			// }
+//
+//			if (dtIni.compareTo(dtFim) >= 0) {
+//				Calendar cal = Calendar.getInstance();
+//				cal.setTime(dtFim);
+//				cal.add(Calendar.MONTH, -1);
+//				dtIni = cal.getTime();
+//
+//				data_inicial = sdf.format(dtIni);
+//				retorno.setData_inicio(data_inicial);
+//			}
+//
+//			retorno = processamento.iniciaProcessamento(data_inicial, data_final);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		return retorno;
+//	}
 }
