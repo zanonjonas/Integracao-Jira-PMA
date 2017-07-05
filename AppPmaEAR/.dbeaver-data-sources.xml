@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data-sources>
+	<data-source id="oracle_thin-15c8d3f7f66-1b1499d5f4baaa97" provider="oracle" driver="oracle_thin" name="Oracle - New Connection" save-password="true" show-system-objects="true" read-only="false">
+		<connection host="10.129.120.11" port="1521" server="" database="PAXMON" url="jdbc:oracle:thin:@10.129.120.11:1521:PAXMON" user="paxrel" password="AwUeIVtbFEdl8w==" type="dev">
+			<provider-property name="@dbeaver-sid-service@" value="SID"/>
+			<provider-property name="@dbeaver-use-rule-hint@" value="false"/>
+			<provider-property name="@dbeaver-connection-type@" value="BASIC"/>
+			<provider-property name="@dbeaver-check-schema-content@" value="true"/>
+			<provider-property name="@dbeaver-always-show-dba@" value="false"/>
+			<network-handler type="TUNNEL" id="ssh_tunnel" enabled="false" save-password="false">
+				<property name="sshConnectTimeout" value="10000"/>
+				<property name="port" value="22"/>
+				<property name="authType" value="PASSWORD"/>
+			</network-handler>
+			<network-handler type="PROXY" id="socks_proxy" enabled="false" save-password="false">
+				<property name="socks-port" value="1080"/>
+			</network-handler>
+		</connection>
+		<virtual-meta-data>
+			<container name="model">
+				<container name="PAXREL">
+					<entity name="PMA_DADOS">
+						<constraint name="PRIMARY" type="VIRTUAL KEY">
+							<attribute name="DATA_INSERCAO"/>
+							<attribute name="CHAMADO"/>
+							<attribute name="TITULO"/>
+							<attribute name="DATA_CRIACAO"/>
+							<attribute name="STATUS"/>
+							<attribute name="TIPO_CHAMADO"/>
+							<attribute name="SOLICITANTE"/>
+							<attribute name="SEGUNDOS"/>
+							<attribute name="PROJETO"/>
+							<attribute name="HOST"/>
+							<attribute name="RESPONSAVEL"/>
+							<attribute name="PRIORIDADE"/>
+							<attribute name="CRIADOR"/>
+							<attribute name="RESOLUCAO"/>
+							<attribute name="DATA_FECHAMENTO"/>
+							<attribute name="DATA_ATUALIZACAO"/>
+							<attribute name="TIPO_RELACAO"/>
+							<attribute name="RELACAO"/>
+							<attribute name="RELACIONADAS"/>
+							<attribute name="DATA_INICIO_PARADA"/>
+							<attribute name="DATA_FIM_PARADA"/>
+							<attribute name="TIPO_PARADA"/>
+						</constraint>
+					</entity>
+				</container>
+			</container>
+		</virtual-meta-data>
+	</data-source>
+</data-sources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/application_7.xsd" id="Application_ID" version="7">
+  <display-name>AppPmaEAR</display-name>
+  <module>
+    <web>
+      <web-uri>AppPmaWAR.war</web-uri>
+      <context-root>pax</context-root>
+    </web>
+  </module>
+  <module>
+    <ejb>AppPmaEJB.jar</ejb>
+  </module>
+</application>

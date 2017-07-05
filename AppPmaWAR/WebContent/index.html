@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>:D</title>
+<meta charset="UTF-8" />
+<style>
+video {
+	margin-top: 9%;
+	margin-left: 40%;
+}
+</style>
+</head>
+<body>
+	<div class="header">
+		<h1 align="center">Passos para a requisição de um novo token no
+				Jira</h1>
+		<div class="content">
+			<ol>
+				<li>Invoque o método de requisição de um token temporário:
+					{ip-atual}/pax/api/v1/processamento/auth/temp_token</li>
+				<li>Authorize o token temporário no link recebido pelo método</li>
+				<li>Invoque o método de requisição do token de acesso, passando
+					como parâmetro o código de verificação do jira:
+					{ip-atual}/pax/api/v1/processamento/auth/access_token/{codigo-verificação}</li>
+				<li>Processe os chamados como ninguem! (Obs: após a execução desses passos, o token será válido até que o mesmo tenha acesso revogado)</li>
+			</ol>
+
+			<video autoplay="autoplay" loop="loop" width="400" height="300">
+				<source src="resources/video.mp4" type="video/mp4" />
+			</video>
+		</div>
+	</div>
+</body>
+</html>

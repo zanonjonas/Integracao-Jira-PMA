@@ -1,0 +1,114 @@
+
+package jira.wadl.generated;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Classe Java de simpleListWrapper complex type.
+ * 
+ * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * 
+ * <pre>
+ * &lt;complexType name="simpleListWrapper"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="items" type="{http://www.w3.org/2001/XMLSchema}anyType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="size" use="required" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
+ *       &lt;attribute name="max-results" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "simpleListWrapper", propOrder = {
+    "items"
+})
+public class SimpleListWrapper {
+
+    protected List<Object> items;
+    @XmlAttribute(name = "size", required = true)
+    protected int size;
+    @XmlAttribute(name = "max-results")
+    protected Integer maxResults;
+
+    /**
+     * Gets the value of the items property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the items property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getItems().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Object }
+     * 
+     * 
+     */
+    public List<Object> getItems() {
+        if (items == null) {
+            items = new ArrayList<Object>();
+        }
+        return this.items;
+    }
+
+    /**
+     * Obtém o valor da propriedade size.
+     * 
+     */
+    public int getSize() {
+        return size;
+    }
+
+    /**
+     * Define o valor da propriedade size.
+     * 
+     */
+    public void setSize(int value) {
+        this.size = value;
+    }
+
+    /**
+     * Obtém o valor da propriedade maxResults.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public Integer getMaxResults() {
+        return maxResults;
+    }
+
+    /**
+     * Define o valor da propriedade maxResults.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setMaxResults(Integer value) {
+        this.maxResults = value;
+    }
+
+}
